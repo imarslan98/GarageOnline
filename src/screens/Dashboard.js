@@ -99,6 +99,25 @@ const Dashboard = ({ navigation }) => {
           <Text style={{ marginTop: 20, fontSize: 24, color: 'black', marginLeft: 15 }} >
             Welcome
           </Text>
+          <TouchableOpacity
+            onPress={() => navigation.navigate(ScreenNames.ProfileEditScreen)}
+            style={{ height: 50, width: 50, backgroundColor: 'pink', borderRadius: 25, justifyContent: 'center', alignItems: 'center', marginRight: -10 }} >
+            {
+              picUrl ?
+                <SvgImage
+                  source={{ uri: picUrl }}
+                  style={{ height: 50, width: 50, backgroundColor: 'pink', borderRadius: 25, marginRight: 10, }}
+                />
+                :
+                <Text style={{ color: colors.black, fontSize: 28 }} >
+                  {
+                    userName ?
+                      userName[0] :
+                      'C'}
+                </Text>
+            }
+          </TouchableOpacity>
+
         </View>
         <View style={{ justifyContent: 'center', }} >
           <Text style={{ marginTop: 10, fontSize: 24, textAlign: 'center', color: 'black', }} >
