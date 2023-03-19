@@ -4,7 +4,7 @@ import React from 'react'
 const Arslan = () => {
   return (
     <View>
-      <Text>Arslan</Text>
+      <Text>GarageOnline</Text>
     </View>
   )
 }
