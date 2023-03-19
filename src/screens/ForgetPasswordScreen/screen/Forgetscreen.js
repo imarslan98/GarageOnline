@@ -4,6 +4,7 @@ import React from 'react';
 
 import ForgetPasswordServiceComponent from '../service/index.service.js';
 //import ForgetPasswordComponent from '../components/index.js';
+import ForgetPasswordComponent from '../components/index.js';
 
 
 
