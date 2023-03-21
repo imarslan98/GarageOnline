@@ -8,17 +8,20 @@ import { NavigationContainer, TabActions } from '@react-navigation/native';
 import SignIn from '../screens/SignIn';
 import SignUp from '../screens/SignUp';
 import Dashboard from '../screens/Dashboard';
-import DrawerNavigator from './DrawerNavigation/DrawerNavigation';
 import ForgetPasswordScreen from '../screens/ForgetPasswordScreen/screen/Forgetscreen';
 import Confirmation from '../screens/Confirmation';
-import CityLists from '../screens/CityLists';
 import FindMore from '../screens/FindMore';
 import Shoper from '../screens/Shoper';
 import Settings from '../screens/Settings';
-
 import ProfileEditScreen from '../screens/ProfileEditScreen/screen/ProfileEditScreen';
+
+
 import HomeTabNavigator from './BottomNavigator/Hometabnavigator';
+import DrawerNavigator from './DrawerNavigation/DrawerNavigation';
+
+
 import Arslan from '../screens/Arslan';
+
 
 
 
@@ -40,11 +43,14 @@ const AppNavigator = () => {
             <Stack.Screen name={ScreenNames.SignIn} component={SignIn} />
             <Stack.Screen name={ScreenNames.SignUp} component={SignUp} />
             <Stack.Screen name={ScreenNames.ForgetPasswordScreen} component={ForgetPasswordScreen} />
+            <Stack.Screen name={ScreenNames.ProfileEditScreen} component={ProfileEditScreen} />
 
             <Stack.Screen name={ScreenNames.Dashboard} component={Dashboard} />
             <Stack.Screen name={ScreenNames.FindMore} component={FindMore} />
             <Stack.Screen name={ScreenNames.Shoper} component={Shoper} />
             <Stack.Screen name={ScreenNames.Settings} component={Settings} />
+            <Stack.Screen name={ScreenNames.HomeTabNavigator} component={HomeTabNavigator} />
+            <Stack.Screen name={ScreenNames.DrawerNavigator} component={DrawerNavigator} />
 
             <Stack.Screen name={ScreenNames.Confirmation} component={Confirmation} />
 

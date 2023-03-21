@@ -3,6 +3,8 @@ import {
     View, SafeAreaView, Text, ActivityIndicator, Platform, StatusBar,
     RefreshControl, TouchableOpacity, ScrollView, Image, FlatList, ViewBase, TextInput, Dimensions
 } from 'react-native';
+import ScreenNames from '../../../Helpers/ScreenNames';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 
 const screenheigt = Dimensions.get("screen").height;
@@ -16,7 +18,7 @@ const ForgetPasswordComponent = ({ navigation, isLinkSent,
         return (
             <View style={{
 
-                flexDirection: 'row', backgroundColor: 'white', borderRadius: 50,
+                flexDirection: 'row', backgroundColor: 'white',
                 shadowColor: "#000",
                 shadowOffset: {
                     width: 0,
@@ -89,7 +91,14 @@ const ForgetPasswordComponent = ({ navigation, isLinkSent,
     const MainView = () => {
         return (
             <View style={{ flex: 1, }}>
+                <View>
+                    <TouchableOpacity onPress={() => {
+                        navigation.navigate(ScreenNames.SignIn)
+                    }}>
+                        <Icon name='arrow-back' size={30} style={{ color: '#FFA500', margin: 15, marginLeft: 5, }} />
 
+                    </TouchableOpacity>
+                </View>
 
                 <View style={{ marginTop: 50 }} >
 
@@ -100,7 +109,7 @@ const ForgetPasswordComponent = ({ navigation, isLinkSent,
                 </View>
                 {
                     isLinkSent ?
-                        <Text style={{ fontFamily: 'billy', fontSize: 20, textAlign: 'center', marginTop: 5 }} >
+                        <Text style={{ fontFamily: 'billy', fontSize: 20, textAlign: 'center', marginTop: 5, color: 'white' }} >
                             Password reset link will be sent to your email!
                         </Text>
                         :
@@ -120,8 +129,8 @@ const ForgetPasswordComponent = ({ navigation, isLinkSent,
     }
     return (
 
-        <SafeAreaView style={{ flex: 1, backgroundColor: '#DDCBE5' }}>
-            <View style={{ flex: 1, backgroundColor: '#DDCBE5' }}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: '#133160' }}>
+            <View style={{ flex: 1, backgroundColor: '#133160' }}>
 
                 {MainView()}
 
