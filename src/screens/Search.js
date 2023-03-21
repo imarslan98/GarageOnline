@@ -14,6 +14,5 @@ const Search = [
     {
         name: 'Bike'
     },
-
 ];
 export default Search;
