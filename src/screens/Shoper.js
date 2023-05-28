@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react'
-import { View, Text, FlatList, TouchableOpacity, Linking, Platform } from 'react-native'
+import { View, Text, FlatList, TouchableOpacity, Linking, Platform,ImageBackground,Image } from 'react-native'
 import { getRideOrder, getUserData } from '../Helpers/ApiCalls'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
@@ -52,7 +52,7 @@ const Shoper = ({ navigation }) => {
         // console.log('>>> getRideOrder', data);
     }
     return (
-        <View style={{ flex: 1, backgroundColor: '#DDCBE5' }}>
+        <View style={{ flex: 1, backgroundColor: '#D3D3D3' }}>
 
             <View style={{ backgroundColor: 'white', }}>
                 <TouchableOpacity style={{ marginTop: 20, marginLeft: 10 }} onPress={() => navigation.navigate(ScreenNames.Settings)} >
@@ -60,61 +60,98 @@ const Shoper = ({ navigation }) => {
                         <Icon name='settings' size={30} style={{ color: '#FFA500', margin: 15, marginLeft: 5, }} />
                     </Text>
                 </TouchableOpacity>
-                <Text style={{ alignContent: 'center', fontSize: 20, fontWeight: 'bold', marginLeft: 50, borderColor: '#FFA500', marginTop: -25, }}>
-                    Hello,This is user's Dashboard
+               
+                <Text style={{ alignContent: 'center', fontSize: 20, fontWeight: 'bold', marginLeft: 80, borderColor: '#133160', marginTop: -25,color:'#133160' }}>
+                     Garage Owner's Dashboard
                 </Text>
 
             </View>
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 10, alignItems: 'center' }} >
-                <Text style={{ marginTop: 30, fontSize: 24, color: 'black', marginLeft: 15 }} >
-                    Welcome
+            <ImageBackground source={require('../Assets/back.jpg')} resizeMode="cover" style={{
+                
+                width: '100%', // applied to Image
+            }}>
+        <View>
+          <Image
+            source={require('../Assets/Logo.png')}
+            style={{
+              marginLeft: 110,
+              width: 120,
+              height: 120,
+              marginTop: 40,
+
+
+            }}
+
+          />
+        </View>
+
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 10, alignItems: 'center', }} >
+          <Text style={{ marginTop: 15, fontSize: 24, color: 'white', marginLeft: 20 }} >
+            Welcome
+          </Text>
+          <TouchableOpacity
+            onPress={() => navigation.navigate(ScreenNames.ProfileEditScreen)}
+            style={{ height: 50, width: 50, backgroundColor: 'pink', borderRadius: 25, justifyContent: 'center', alignItems: 'center', marginRight: 10 }} >
+            {
+              picUrl ?
+                <SvgImage
+                  source={{ uri: picUrl }}
+                  style={{ height: 50, width: 50, backgroundColor: 'pink', borderRadius: 25, marginRight: 5,marginLeft:10 }}
+                />
+                :
+                <Text style={{ color: colors.black, fontSize: 28 }} >
+                  {
+                    userName ?
+                      userName[0] :
+                      'C'}
                 </Text>
-                <TouchableOpacity
-                    onPress={() => navigation.navigate(ScreenNames.ProfileEditScreen)}
-                    style={{ height: 50, width: 50, backgroundColor: 'pink', borderRadius: 25, justifyContent: 'center', alignItems: 'center', marginRight: 15 }} >
-                    {
-                        picUrl ?
-                            <SvgImage
-                                source={{ uri: picUrl }}
-                                style={{ height: 50, width: 50, backgroundColor: 'pink', borderRadius: 25, marginRight: 10, }}
-                            />
-                            :
-                            <Text style={{ color: colors.black, fontSize: 28 }} >
-                                {
-                                    userName ?
-                                        userName[0] :
-                                        'C'}
-                            </Text>
-                    }
-                </TouchableOpacity>
-            </View>
-            <View style={{ justifyContent: 'center', }} >
-                <Text style={{ marginTop: 10, fontSize: 24, textAlign: 'center', color: 'black', }} >
-                    Mr. {userName}
-                </Text>
-            </View>
+            }
+          </TouchableOpacity>
+
+        </View>
+        <View style={{ justifyContent: 'center', }} >
+          <Text style={{ marginTop: 10, fontSize: 24, textAlign: 'center', color: 'white', }} >
+            Mr. {userName}
+          </Text>
+        </View>
+        </ImageBackground>
 
             <FlatList style={{ marginRight: 15, }}
                 data={order}
                 renderItem={({ item }) => {
                     // console.log('>>>> item ');
                     return (
+                        
                         <View style={{ marginTop: 15, alignItem: 'center', justifyContent: 'center', marginLeft: 15, borderColor: '#FFA500', borderRadius: 10, borderWidth: 1, }} >
-                            <Text style={{ fontSize: 15, fontWeight: 'bold', color: 'black' }}>Name:{"\n"}
+                              <View>
+          <Image
+            source={require('../Assets/garage.jpeg')}
+            style={{
+                flex: 1,
+                position: 'absolute',
+                resizeMode: 'cover',
+                width:'100%',
+                height:250
+
+            }}
+
+          />
+        </View>
+                            <Text style={{ fontSize: 15, fontWeight: 'bold', color: 'white' }}>Name:{"\n"}
                                 {item.userInfo.name}</Text>
-                            <Text style={{ fontSize: 15, fontWeight: 'bold', color: 'black' }}>Phone No.:{"\n"}
+                            <Text style={{ fontSize: 15, fontWeight: 'bold', color: '#FFA500' }}>Phone No.:{"\n"}
                                 {item.userInfo.userMobile}</Text>
 
 
-                            <Text style={{ fontSize: 15, fontWeight: 'bold', color: 'black' }}>Title:{"\n"}
+                            <Text style={{ fontSize: 15, fontWeight: 'bold', color: 'white' }}>Title:{"\n"}
                                 {item.plan.title}</Text>
 
 
-                            <Text style={{ fontSize: 15, fontWeight: 'bold', color: 'black' }}>Description:{"\n"}
+                            <Text style={{ fontSize: 15, fontWeight: 'bold', color: 'white' }}>Description:{"\n"}
                                 {item.plan.description}</Text>
 
                             <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 10, }} >
-                                <Text style={{ color: colors.black, fontWeight: 'bold' }} >
+                                <Text style={{ color:'#FFA500', fontWeight: 'bold' }} >
                                     User Location :
                                 </Text>
                                 <TouchableOpacity

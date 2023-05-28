@@ -14,6 +14,8 @@ module.exports = {
     Shoper: 'Shoper',
     Arslan: 'Arslan',
     Settings: 'Settings',
+    Detail:'Detail',
+    Profile:'Profile',
 
 
 }

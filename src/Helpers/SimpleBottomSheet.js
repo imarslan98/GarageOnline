@@ -2,6 +2,7 @@ import React, { useState, useRef, useImperativeHandle } from 'react';
 import { Modal, View, StyleSheet, ScrollView, Text, TouchableOpacity, Dimensions } from 'react-native';
 import BottomeSheet from './BottomSheet.js';
 const screenHeight = Dimensions.get("screen").height
+import SvgImage from './SvgImage.js';
 // import SvgImage from './SvgImage.js';
 const BottomSheetComponent = React.forwardRef(({ maxheight = 0,
     leftimage, title, image, Bottomimage, stictOpen, disableDrag, hideCrossIcon, sheetData, onOpen, titleStyle, closeOnPressBack }, ref) => {

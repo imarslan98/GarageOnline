@@ -147,7 +147,7 @@ const Confirmation = ({ navigation, route }) => {
         );
     };
     console.log('>>> currentLongitude11111 ', currentLongitude, currentLatitude);
-    // const user = { name: 'Zoraiz', phone: 777777 }
+    // const user = { name: 'Arslan', phone: 777777 }
     return (
         <View>
             <CustomActivityIndicator
@@ -156,7 +156,7 @@ const Confirmation = ({ navigation, route }) => {
             <ScrollView>
                 <View>
                     <TouchableOpacity onPress={() => {
-                        navigation.navigate(ScreenNames.CityLists)
+                        navigation.navigate(ScreenNames.FindMore)
                     }}>
                         <Icon name='arrow-back' size={30} style={{ color: '#FFA500', margin: 15, marginLeft: 5, }} />
 
@@ -172,7 +172,7 @@ const Confirmation = ({ navigation, route }) => {
                         style={{ width: '98%', borderWidth: 1, borderRadius: 10, marginTop: 70, paddingStart: 20 }}
                     />
 
-                    <Text style={{ textAlign: 'center', padding: 5, marginTop: 20, backgroundColor: '#FFA500' }} >OR</Text>
+                    <Text style={{ textAlign: 'center', padding: 5, marginTop: 20, backgroundColor: '#133160',color:'white' }} >OR</Text>
                     <TouchableOpacity
 
                         onPress={() => {
@@ -202,7 +202,7 @@ const Confirmation = ({ navigation, route }) => {
 
                     <TouchableOpacity
 
-                        style={{ width: '98%', height: 70, borderWidth: 0, borderRadius: 10, marginTop: 30, justifyContent: 'center', borderBottomColor: 'blue', backgroundColor: '#FFA500', marginLeft: 4, }}
+                        style={{ width: '98%', height: 70, borderWidth: 0, borderRadius: 10, marginTop: 30, justifyContent: 'center', borderBottomColor: 'blue', backgroundColor: '#133160', marginLeft: 4, }}
 
                         onPress={async () => {
                             // navigation.navigate(ScreenNames.OrderRide)
@@ -212,7 +212,7 @@ const Confirmation = ({ navigation, route }) => {
                             console.log('=>>>', data)
                             OrderRideAPI(data).then(() => {
                                 showToast('Confirmed Successfully!')
-                                navigation.navigate(ScreenNames.Dashboard)
+                                navigation.navigate(ScreenNames.HomeTabNavigator)
                                 // console.log('Hi success');
                             })
                             console.log('==>>>>', userTemp)

@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, ScrollView, Image } from 'react-native'
+import { View, Text, TouchableOpacity, ScrollView, Image,ImageBackground  } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import ScreenNames from '../Helpers/ScreenNames'
 //import { getOrdersRideAPI } from '../api/Api';
@@ -80,6 +80,10 @@ const Dashboard = ({ navigation }) => {
 
     <View style={{ flex: 1, paddingHorizontal: 20, backgroundColor: '#FFFFFF', }}>
       <ScrollView>
+      <ImageBackground source={require('../Assets/back.jpg')} resizeMode="cover" style={{
+                
+                width: '100%', // applied to Image
+            }}>
         <View>
           <Image
             source={require('../Assets/Logo.png')}
@@ -96,17 +100,17 @@ const Dashboard = ({ navigation }) => {
         </View>
 
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 10, alignItems: 'center', }} >
-          <Text style={{ marginTop: 20, fontSize: 24, color: 'black', marginLeft: 15 }} >
+          <Text style={{ marginTop: 15, fontSize: 24, color: 'white', marginLeft: 20 }} >
             Welcome
           </Text>
           <TouchableOpacity
             onPress={() => navigation.navigate(ScreenNames.ProfileEditScreen)}
-            style={{ height: 50, width: 50, backgroundColor: 'pink', borderRadius: 25, justifyContent: 'center', alignItems: 'center', marginRight: -10 }} >
+            style={{ height: 50, width: 50, backgroundColor: 'pink', borderRadius: 25, justifyContent: 'center', alignItems: 'center', marginRight: 10 }} >
             {
               picUrl ?
                 <SvgImage
                   source={{ uri: picUrl }}
-                  style={{ height: 50, width: 50, backgroundColor: 'pink', borderRadius: 25, marginRight: 10, }}
+                  style={{ height: 50, width: 50, backgroundColor: 'pink', borderRadius: 25, marginRight: 5,marginLeft:10 }}
                 />
                 :
                 <Text style={{ color: colors.black, fontSize: 28 }} >
@@ -120,48 +124,60 @@ const Dashboard = ({ navigation }) => {
 
         </View>
         <View style={{ justifyContent: 'center', }} >
-          <Text style={{ marginTop: 10, fontSize: 24, textAlign: 'center', color: 'black', }} >
+          <Text style={{ marginTop: 10, fontSize: 24, textAlign: 'center', color: 'white', }} >
             Mr. {userName}
           </Text>
         </View>
+        </ImageBackground>
         <View  >
           <TouchableOpacity
-            style={{ width: '98%', height: 170, borderWidth: 0, borderRadius: 10, marginTop: 15, justifyContent: 'center', }}
+            style={{ width: '98%', height: 170, borderWidth: 0,  marginTop: 15, justifyContent: 'center', }}
             onPress={() => {
-              // navigation.navigate(ScreenNames.Atd)
+              navigation.navigate(ScreenNames.Detail)
             }} >
-            <Image style={{ marginTop: 0, height: 160, width: 320, resizeMode: "stretch", marginRight: 30, borderRadius: 15, }} source={require('../Assets/Atd.jpg')} />
+            <Image style={{ marginTop: 0, height: 160, width: 320, resizeMode: "stretch", marginRight: 30,  }} source={require('../Assets/uber.jpeg')} />
 
           </TouchableOpacity>
+          <Text style={{fontSize:25,color:'#133160'}}>Uber Fleets</Text>
         </View>
         <View  >
           <TouchableOpacity
-            style={{ width: '98%', height: 170, borderWidth: 0, borderRadius: 10, marginTop: 15, justifyContent: 'center', }}
+            style={{ width: '98%', height: 170, borderWidth: 0, marginTop: 15, justifyContent: 'center', }}
             onPress={() => {
-              // navigation.navigate(ScreenNames.Atd)
+              navigation.navigate(ScreenNames.Detail)
             }} >
-            <Image style={{ marginTop: 0, height: 160, width: 320, resizeMode: "stretch", marginRight: 30, borderRadius: 15, }} source={require('../Assets/Atd.jpg')} />
-
+            <Image style={{ marginTop: 0, height: 160, width: 320, resizeMode: "stretch", marginRight: 30,  }} source={require('../Assets/careem.png')} />
           </TouchableOpacity>
+          <Text style={{fontSize:25,color:'#133160'}}>Careem Fleets</Text>
         </View>
         <View  >
           <TouchableOpacity
-            style={{ width: '98%', height: 160, borderWidth: 0, borderRadius: 10, marginTop: 15, justifyContent: 'center', }}
+            style={{ width: '98%', height: 160, borderWidth: 0, marginTop: 15, justifyContent: 'center', }}
             onPress={() => {
-              // navigation.navigate(ScreenNames.Atd)
+              navigation.navigate(ScreenNames.Detail)
             }} >
-            <Image style={{ marginTop: 0, height: 170, width: 320, resizeMode: "stretch", marginRight: 30, borderRadius: 15, }} source={require('../Assets/Atd.jpg')} />
-
+            <Image style={{ marginTop: 0, height: 160, width: 320, resizeMode: "stretch", marginRight: 30,  }} source={require('../Assets/indriver.png')} />
           </TouchableOpacity>
+          <Text style={{fontSize:25,color:'#133160'}}>Indriver Fleets</Text>
+        </View>
+        <View  >
+          <TouchableOpacity
+            style={{ width: '98%', height: 160, borderWidth: 0, marginTop: 15, justifyContent: 'center', }}
+            onPress={() => {
+              navigation.navigate(ScreenNames.Detail)
+            }} >
+            <Image style={{ marginTop: 10, height: 180, width: 320, resizeMode: "stretch", marginRight: 30,  }} source={require('../Assets/personal.jpg')} />
+          </TouchableOpacity>
+          <Text style={{fontSize:25,color:'#133160',marginTop:15}}>Personal Car Solutions</Text>
         </View>
 
 
         <TouchableOpacity
-          style={{ width: '99%', height: 60, borderWidth: 0, borderRadius: 10, marginTop: 15, justifyContent: 'center', backgroundColor: '#FFA500', }}
+          style={{ width: '99%', height: 60, borderWidth: 0, borderRadius: 10, marginTop: 15, justifyContent: 'center', backgroundColor: '#133160', }}
           onPress={() => {
             navigation.navigate(ScreenNames.FindMore)
           }} >
-          <Text style={{ textAlign: 'center', padding: 5, fontSize: 20, color: 'black', }} >Find More</Text>
+          <Text style={{ textAlign: 'center', padding: 5, fontSize: 20, color: 'white', }} >Find More</Text>
         </TouchableOpacity>
 
 

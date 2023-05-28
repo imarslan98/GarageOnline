@@ -3,10 +3,13 @@ import {
     View, SafeAreaView, Text, ActivityIndicator, Platform, StatusBar,
     RefreshControl, TouchableOpacity, ScrollView, Image, FlatList, TextInput, Dimensions
 } from 'react-native';
-//import SvgImage from '../../../Helpers/SvgImage';
-import SvgImage from '../../../Helpers/SvgImage';
+
 import { Picker } from '@react-native-picker/picker';
-//import ImagePickerCrop from 'react-native-image-crop-picker';
+
+
+import SvgImage from '../../../Helpers/SvgImage';
+import ImagePicker from 'react-native-image-crop-picker';
+
 import RNFS from 'react-native-fs';
 import ImageResizer from 'react-native-image-resizer';
 const screenWidth = Math.round(Dimensions.get('window').width);
@@ -55,7 +58,7 @@ const ProfileEditScreenComponent = ({
 }) => {
     const takeGalleryPicture = async () => {
 
-        ImagePickerCrop.openPicker({
+        ImagePicker.openPicker({
             width: screenWidth,
             height: screenWidth,
             cropping: true,
@@ -86,7 +89,7 @@ const ProfileEditScreenComponent = ({
     const takeCameraPicture = async () => {
 
 
-        ImagePickerCrop.openCamera({
+        ImagePicker.openCamera({
             width: screenWidth,
             height: screenWidth,
             cropping: true,
@@ -129,8 +132,8 @@ const ProfileEditScreenComponent = ({
 
                 </TouchableOpacity>
                 <View style={{ flex: 1, alignItems: 'center', flexDirection: 'column', }}>
-                    <Text style={{ fontSize: 24, fontWeight: '400', color: '#FFA500', paddingTop: 3, }}>PROFILE</Text>
-                    <Text style={{ fontSize: 24, fontWeight: '400', color: '#FFA500', paddingTop: 3, }}>EDIT</Text>
+                    <Text style={{ fontSize: 24, fontWeight: '400', color: '#133160', paddingTop: 3, }}>PROFILE</Text>
+                    <Text style={{ fontSize: 24, fontWeight: '400', color: '#133160', paddingTop: 3, }}>EDIT</Text>
 
                 </View>
             </View>
@@ -165,11 +168,13 @@ const ProfileEditScreenComponent = ({
 
                             {
                                 showImage === '' ?
-                                    <Text style={{ fontWeight: '400', fontSize: Platform.OS === 'ios' ? 16 : 17, paddingTop: 3, }}>avatar</Text>
-                                    : <SvgImage
-                                        source={{ uri: showImage }}
-                                        style={{ width: 105, height: 105, borderRadius: 100 }}
-                                    />
+                                    <Text style={{ fontWeight: '400', fontSize: Platform.OS === 'ios' ? 16 : 17, paddingTop: 3, }}>Avatar</Text>
+                                   : <SvgImage
+                                   source={{uri:showImage}}
+                                   style={{width:105,height:105,borderRadius:100}}
+                                   />
+                                   
+                                    
                             }
                         </TouchableOpacity>
                     </View>
@@ -187,7 +192,7 @@ const ProfileEditScreenComponent = ({
                 <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: 15 }} >
                     <TouchableOpacity
                         onPress={btnActionUpdateProfile}
-                        style={{ backgroundColor: '#FFA500', borderRadius: 10, }} >
+                        style={{ backgroundColor: '#133160', borderRadius: 10, }} >
                         <Text style={{ paddingHorizontal: 30, paddingVertical: 10, color: colors.black }} >
                             Update
                         </Text>

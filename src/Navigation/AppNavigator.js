@@ -14,6 +14,9 @@ import FindMore from '../screens/FindMore';
 import Shoper from '../screens/Shoper';
 import Settings from '../screens/Settings';
 import ProfileEditScreen from '../screens/ProfileEditScreen/screen/ProfileEditScreen';
+import Detail from '../screens/Detail';
+import profile from '../screens/Profile'
+
 
 
 import HomeTabNavigator from './BottomNavigator/Hometabnavigator';
@@ -21,6 +24,7 @@ import DrawerNavigator from './DrawerNavigation/DrawerNavigation';
 
 
 import Arslan from '../screens/Arslan';
+import Profile from '../screens/Profile';
 
 
 
@@ -29,7 +33,7 @@ import Arslan from '../screens/Arslan';
 
 const AppNavigator = () => {
     const Stack = createNativeStackNavigator();
-    //const Tab = createBottomTabNavigator();
+    
     return (
 
 
@@ -49,6 +53,10 @@ const AppNavigator = () => {
             <Stack.Screen name={ScreenNames.FindMore} component={FindMore} />
             <Stack.Screen name={ScreenNames.Shoper} component={Shoper} />
             <Stack.Screen name={ScreenNames.Settings} component={Settings} />
+            <Stack.Screen name={ScreenNames.Detail}component={Detail}/>
+            <Stack.Screen name={ScreenNames.Profile}component={Profile}/>
+
+
             <Stack.Screen name={ScreenNames.HomeTabNavigator} component={HomeTabNavigator} />
             <Stack.Screen name={ScreenNames.DrawerNavigator} component={DrawerNavigator} />
 

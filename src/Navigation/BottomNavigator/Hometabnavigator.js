@@ -5,6 +5,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import DrawerNavigator from '../DrawerNavigation/DrawerNavigation';
+import ProfileEditScreen from '../../screens/ProfileEditScreen/screen/ProfileEditScreen';
+import Settings from '../../screens/Settings';
 
 
 
@@ -31,8 +33,8 @@ const HomeTabNavigator = () => {
         }
 
         return (
-            <View style={{ backgroundColor: '#FFA500' }} >
-                <View style={{ flexDirection: 'row', height: 70, backgroundColor: 'white', padding: 20, overflow: 'hidden', shadowColor: '#FFA500', shadowRadius: 2, }}>
+            <View style={{ backgroundColor: 'ADD8E6' }} >
+                <View style={{ flexDirection: 'row', height: 60, backgroundColor: 'ADD8E6', padding: 20, overflow: 'hidden', shadowColor: '#FFA500', shadowRadius: 2, }}>
                     {state.routes.map((route, index) => {
                         const { options } = descriptors[route.key];
                         const label =
@@ -72,8 +74,9 @@ const HomeTabNavigator = () => {
                                 onLongPress={onLongPress}
                                 style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
                             >
-                                {label === ScreenNames.DrawerNavigator && <Icon name="home" color={'#FFA500'} size={25} />}
-
+                                {label === ScreenNames.DrawerNavigator && <Icon name="home" color={'#133160'} size={25} />}
+                                {label === ScreenNames.Profile && <Icon name="person" color={'#133160'} size={25} />}
+                            
 
 
 
@@ -108,6 +111,18 @@ const HomeTabNavigator = () => {
                     ),
                 }}
             />
+            
+             <Tab.Screen
+                name='Profile'
+                component={ProfileEditScreen}
+                options={{
+                    tabBarIcon: ({ color, size }) => (
+                        <Icon name="person" color={color} size={size} />
+                    ),
+                }}
+            />
+
+        
 
 
 

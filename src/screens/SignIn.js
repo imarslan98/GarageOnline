@@ -41,7 +41,7 @@ const SignIn = ({ navigation }) => {
                 setIsLoading(false)
                 console.log('>>> userData ', userData);
                 if (userData.type === 'User') {
-                    navigation.navigate(ScreenNames.Dashboard)
+                    navigation.navigate(ScreenNames.HomeTabNavigator)
                 }
                 else {
 

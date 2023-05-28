@@ -11,7 +11,7 @@ const FindMore = ({ navigation }) => {
         <View>
             <View>
                 <TouchableOpacity onPress={() => {
-                    navigation.navigate(ScreenNames.Dashboard)
+                    navigation.navigate(ScreenNames.HomeTabNavigator)
                 }}>
                     <Icon name='arrow-back' size={30} style={{ color: '#FFA500', margin: 15, marginLeft: 5, }} />
 
