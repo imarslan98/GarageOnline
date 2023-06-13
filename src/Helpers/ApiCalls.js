@@ -13,6 +13,8 @@ export const GetCurrentUserDataAPI = async () => {
     console.log('>>> saving error : ', e);
   }
 };
+
+/*
 export const emptysUserData = async () => {
   try {
     await AsyncStorage.setItem('@storage_user_id', '');
@@ -34,7 +36,7 @@ export const getUserId = async () => {
     // error reading value
     console.log('>>> error reading value : ', e);
   }
-};
+};*/
 
 export const writeUserData = async body => {
   const value = await AsyncStorage.getItem('@storage_user_id');
@@ -84,7 +86,7 @@ export const getUserData = async () => {
   var user = await firestore().collection('Users').doc(value).get();
   return user;
 };
-
+/*
 export const requestCompleted = async id => {
   const value = await AsyncStorage.getItem('@storage_user_id');
   await firestore()
@@ -145,6 +147,8 @@ export const getRidePrices = async body => {
 
   return ordersRidePrice;
 };
+*/
+
 export const getRideOrder = async body => {
   console.log('>>> Come JHere 11');
   var ordersRide = await firestore().collection('OrdersRide').get();
