@@ -6,8 +6,6 @@ export default [
         title: 'Guru Garage',
         description: 'Best Mechanic',
 
-
-
     },
     {
         id: '1',
